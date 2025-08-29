@@ -23,6 +23,15 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubunt
   grid-template-columns: 1fr minmax(0, auto) 1fr; /* left | middle | right */
   gap: .5rem;
 }
+.faber-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;       /* Semi-bold for good emphasis */
+  font-size: 1.8rem;      /* Normal heading size */
+  color: #1e293b;         /* Dark indigo color */
+  text-align: center;     /* Center align for better presentation */
+  margin: 20px 0;         /* Vertical spacing */
+  letter-spacing: 0.05em; /* Slight letter spacing for clarity */
+}
 
 /* Logo buttons */
 .logoBtn {
@@ -197,44 +206,8 @@ header.is-scrolled {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.service-card h3 {
-  font-size: 1.3rem;
-  margin: 15px 0 5px;
-  color: #2e2e2e;
-}
-
-.service-card p {
-  font-size: 0.95rem;
-  color: #666;
-  padding: 0 15px 20px;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.service-boxes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.service-card {
-  background: #fff;
   padding: 25px 20px;
-  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
 }
 
 .service-card:hover {
@@ -242,6 +215,25 @@ header.is-scrolled {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* ✅ Image style */
+.service-card img {
+  width: 100%;
+  height: auto;             /* keeps original ratio */
+  max-height: 220px;        /* uniform desktop look */
+  object-fit: cover;        /* fills space neatly */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+}
+
+/* ✅ Responsive grid */
+.service-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ✅ Text */
 .service-icon {
   font-size: 40px;
   color: #007bff;
@@ -253,12 +245,40 @@ header.is-scrolled {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 12px;
+  color: #2e2e2e;
 }
 
 .service-card p {
   font-size: 14px;
   color: #555;
+  padding: 0 15px 20px;
 }
+
+/* ✅ Mobile view */
+@media (max-width: 768px) {
+  .service-card img {
+    max-height: 180px;   /* smaller but proportional */
+  }
+  .service-card {
+    margin-bottom: 30px;
+  }
+}
+/* VIDEO */
+.service-video {
+  width: 100%;
+  height: auto;          /* keeps original aspect ratio */
+  object-fit: cover;     /* trims if needed without stretching */
+  border-radius: 10px;   /* rounded corners */
+  display: block;
+}
+
+/* On small screens (mobile) */
+@media (max-width: 768px) {
+  .service-video {
+    max-height: 240px;   /* prevent video from getting too tall */
+  }
+}
+
 
 /* Footer */
 .footer {
